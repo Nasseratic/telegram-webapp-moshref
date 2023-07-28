@@ -89,7 +89,7 @@ const DemoApp: FC<{
     </div>
   );
 };
-
+console.log("test");
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
