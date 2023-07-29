@@ -15,7 +15,7 @@ export const List = () => {
           }}
           key={item.id}
         >
-          {i + 1}- {item.telegramUsername}
+          {i + 1} - {item.name ?? item.telegramUsername}
         </ol>
       ))}
     </ul>

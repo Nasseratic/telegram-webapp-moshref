@@ -1,11 +1,12 @@
 import { useMutation, useQuery } from "react-query";
 import { supabase } from "../utils/supabase";
 import { queryClient } from "../utils/reactQuery";
+import { NAME, SESSION_ID, USERNAME } from "../utils/app";
 
 export const joinSession = async () => {
   const { data, error } = await supabase
     .from("sessionUser")
-    .insert({ telegramUsername: USERNAME, sessionId: SESSION_ID })
+    .insert({ telegramUsername: USERNAME, sessionId: SESSION_ID, name: NAME })
     .select();
   if (error) throw error;
   return data;
