@@ -1,20 +1,16 @@
-import { Button, Form, Input, Typography, Switch } from "antd";
-import { FC, useState } from "react";
-import {
-  MainButton,
-  MainButtonProps,
-} from "@vkruglikov/react-telegram-web-app";
+import { MainButton } from "@vkruglikov/react-telegram-web-app";
+import { useJoinSession } from "./data/session";
 
-export const JoinButton: FC<{
-  initialValues?: Partial<MainButtonProps> & { show?: boolean };
-}> = ({ initialValues }) => {
-  const [joinState, setJoinState] = useState(false);
+export const JoinButton = () => {
+  const { mutate, isLoading, isSuccess } = useJoinSession();
 
   return (
     <div>
       <MainButton
-        onClick={() => setJoinState((state) => !state)}
-        text={joinState ? "تم الاضمام" : "انضم"}
+        onClick={() => mutate()}
+        progress={isLoading}
+        disable={isSuccess || isLoading}
+        text={isSuccess ? "تم الاضمام" : "انضم"}
       />
     </div>
   );

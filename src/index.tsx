@@ -5,6 +5,7 @@ import "antd/dist/reset.css";
 import "./index.css";
 
 import { JoinButton } from "./JoinButton";
+import { ReactQueryProvider } from "./utils/reactQuery";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,9 +13,11 @@ const root = ReactDOM.createRoot(
 
 const App = () => {
   return (
-    <WebAppProvider options={{ smoothButtonsTransition: true }}>
-      <JoinButton />
-    </WebAppProvider>
+    <ReactQueryProvider>
+      <WebAppProvider options={{ smoothButtonsTransition: true }}>
+        <JoinButton />
+      </WebAppProvider>
+    </ReactQueryProvider>
   );
 };
 

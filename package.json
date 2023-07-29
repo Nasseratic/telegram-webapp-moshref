@@ -4,6 +4,7 @@
   "private": false,
   "dependencies": {
     "@supabase/supabase-js": "^2.31.0",
+    "@tanstack/react-query-devtools": "^4.32.0",
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
@@ -11,6 +12,7 @@
     "antd": "^5.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.3"
   },
@@ -18,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gen": "pnpm npx supabase gen types typescript --project-id \"oaleghpudvrsnbvaqdzt\" --schema public > src/utils/supabaseTypes.ts"
   },
   "eslintConfig": {
     "extends": [
