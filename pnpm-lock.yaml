@@ -13,6 +13,7 @@ specifiers:
   react-query: ^3.39.3
   react-scripts: 5.0.1
   supabase: ^1.82.2
+  ts-pattern: ^5.0.4
   typescript: ^4.9.3
 
 dependencies:
@@ -27,6 +28,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-query: 3.39.3_biqbaboplfbrettd7655fr4n2y
   react-scripts: 5.0.1_j5ip3o3v6sktjzl5cxtjyfbuo4
+  ts-pattern: 5.0.4
   typescript: 4.9.5
 
 devDependencies:
@@ -10512,6 +10514,10 @@ packages:
 
   /ts-interface-checker/0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
+    dev: false
+
+  /ts-pattern/5.0.4:
+    resolution: {integrity: sha512-D5iVliqugv2C9541W2CNXFYNEZxr4TiHuLPuf49tKEdQFp/8y8fR0v1RExUvXkiWozKCwE7zv07C6EKxf0lKuQ==}
     dev: false
 
   /tsconfig-paths/3.14.2:

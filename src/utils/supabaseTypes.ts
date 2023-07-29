@@ -24,21 +24,42 @@ export interface Database {
         }
         Relationships: []
       }
+      group: {
+        Row: {
+          chatId: number | null
+          id: number
+          name: string | null
+        }
+        Insert: {
+          chatId?: number | null
+          id?: number
+          name?: string | null
+        }
+        Update: {
+          chatId?: number | null
+          id?: number
+          name?: string | null
+        }
+        Relationships: []
+      }
       session: {
         Row: {
           classId: number | null
           createdAt: string | null
           id: number
+          teacherUsername: string | null
         }
         Insert: {
           classId?: number | null
           createdAt?: string | null
           id?: number
+          teacherUsername?: string | null
         }
         Update: {
           classId?: number | null
           createdAt?: string | null
           id?: number
+          teacherUsername?: string | null
         }
         Relationships: [
           {
@@ -53,18 +74,21 @@ export interface Database {
         Row: {
           createdAt: string | null
           id: number
+          name: string | null
           sessionId: number | null
           telegramUsername: string | null
         }
         Insert: {
           createdAt?: string | null
           id?: number
+          name?: string | null
           sessionId?: number | null
           telegramUsername?: string | null
         }
         Update: {
           createdAt?: string | null
           id?: number
+          name?: string | null
           sessionId?: number | null
           telegramUsername?: string | null
         }
@@ -76,6 +100,27 @@ export interface Database {
             referencedColumns: ["id"]
           }
         ]
+      }
+      userRealName: {
+        Row: {
+          created_at: string | null
+          id: number
+          realName: string | null
+          username: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: number
+          realName?: string | null
+          username?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          realName?: string | null
+          username?: string | null
+        }
+        Relationships: []
       }
     }
     Views: {
