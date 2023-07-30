@@ -22,7 +22,7 @@ export const JoinButton = () => {
   if (isLoadingSessions) return null;
 
   const buttonProps: MainButtonProps | null = match([
-    data?.isTeacher && false,
+    data?.isTeacher,
     isAlreadyJoined,
   ])
     .with([true, P.boolean], () => ({
