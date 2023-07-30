@@ -7,30 +7,61 @@ import "antd/dist/reset.css";
 
 import "./index.css";
 
-import { JoinButton } from "./JoinButton";
+import { JoinQueueButton } from "./components/JoinQueueButton";
 import { ReactQueryProvider } from "./utils/reactQuery";
 import { List } from "./List";
-import { NAME, USERNAME } from "./utils/app";
+import { USERNAME } from "./utils/app";
 import { useEffect } from "react";
+import { useSession } from "./data/session";
+import { ManageQueueButton } from "./components/ManageQueueButton";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
+type StudentsList = NonNullable<
+  ReturnType<typeof useSession>["data"]
+>["students"];
+
+const TeacherView = () => {
+  return (
+    <div>
+      <h2 style={{ color: "white" }}> الادوار:</h2>
+      <List />
+      <ManageQueueButton />
+    </div>
+  );
+};
+
+const StudentView = ({ students }: { students: StudentsList }) => {
+  const isInQueue = students.some(
+    (sessionUser) => sessionUser.telegramUsername === USERNAME
+  );
+
+  return (
+    <div>
+      <h2 style={{ color: "white" }}> الادوار:</h2>
+      <List />
+      <JoinQueueButton isInQueue={isInQueue} />
+    </div>
+  );
+};
+
 const Root = () => {
   const [, themeParams] = useThemeParams();
+  const { data: session, isLoading: isLoadingSessions } = useSession();
 
   useEffect(() => {
     if (themeParams.bg_color)
       document.body.style.backgroundColor = themeParams.bg_color;
   }, []);
 
-  return (
-    <div>
-      <h2 style={{ color: "white" }}> الادوار:</h2>
-      <List />
-      <JoinButton />
-    </div>
+  if (isLoadingSessions || !session) return null;
+
+  return session.isTeacher ? (
+    <TeacherView />
+  ) : (
+    <StudentView students={session.students} />
   );
 };
 
