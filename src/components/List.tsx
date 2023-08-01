@@ -1,7 +1,9 @@
 import { useSession } from "../data/session";
+import { useThemeParams } from "@vkruglikov/react-telegram-web-app";
 
 export const List = () => {
   const { data, isLoading } = useSession();
+  const [, themeParams] = useThemeParams();
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -11,7 +13,7 @@ export const List = () => {
       {data?.students?.map((item, i) => (
         <ol
           style={{
-            color: "white",
+            color: themeParams.text_color,
           }}
           key={item.id}
         >
