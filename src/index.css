@@ -23,35 +23,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
-.App-logo {
-  height: 40vmin;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.betaVersion {
-  padding: 10px 10px;
-  margin-bottom: 20px;
-  border: 1px solid #1777ff;
-}
-
-.App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .contentWrapper {
   background: var(--tg-theme-bg-color);
@@ -60,19 +33,4 @@ code {
   margin: 5px 0;
   padding: 20px;
   box-sizing: border-box;
-}
-
-.ant-input,
-.ant-select,
-.ant-select-item {
-  background-color: unset !important;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
