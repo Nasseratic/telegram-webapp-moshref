@@ -9,7 +9,7 @@ import "./index.css";
 
 import { JoinQueueButton } from "./components/JoinQueueButton";
 import { ReactQueryProvider } from "./utils/reactQuery";
-import { List } from "./List";
+import { List } from "./components/List";
 import { USERNAME } from "./utils/app";
 import { useEffect } from "react";
 import { useSession } from "./data/session";

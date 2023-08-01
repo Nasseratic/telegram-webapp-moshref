@@ -1,4 +1,4 @@
-import { useSession } from "./data/session";
+import { useSession } from "../data/session";
 
 export const List = () => {
   const { data, isLoading } = useSession();
