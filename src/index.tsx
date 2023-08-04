@@ -3,14 +3,11 @@ import {
   WebAppProvider,
   useThemeParams,
 } from "@vkruglikov/react-telegram-web-app";
-import "antd/dist/reset.css";
-
-import "./index.css";
 
 import { JoinQueueButton } from "./components/JoinQueueButton";
 import { ReactQueryProvider } from "./utils/reactQuery";
 import { List } from "./components/List";
-import { USERNAME } from "./utils/app";
+import { USERNAME } from "./utils/config";
 import { useEffect } from "react";
 import { useSession } from "./data/session";
 import { ManageQueueButton } from "./components/ManageQueueButton";
@@ -69,7 +66,9 @@ const App = () => {
   return (
     <ReactQueryProvider>
       <WebAppProvider options={{ smoothButtonsTransition: true }}>
-        <Root />
+        <div className="p-8">
+          <Root />
+        </div>
       </WebAppProvider>
     </ReactQueryProvider>
   );

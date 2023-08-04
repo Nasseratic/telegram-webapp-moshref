@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "react-query";
 import { supabase } from "../utils/supabase";
 import { queryClient } from "../utils/reactQuery";
-import { NAME, SESSION_ID, USERNAME } from "../utils/app";
+import { NAME, SESSION_ID, USERNAME } from "../utils/config";
 
 export const joinSession = async () => {
   const { data, error } = await supabase
