@@ -23,7 +23,6 @@ type StudentsList = NonNullable<
 const TeacherView = () => {
   return (
     <div>
-      <h2 style={{ color: "white" }}> الادوار:</h2>
       <List />
       <ManageQueueButton />
     </div>
@@ -37,7 +36,6 @@ const StudentView = ({ students }: { students: StudentsList }) => {
 
   return (
     <div>
-      <h2 style={{ color: "white" }}> الادوار:</h2>
       <List />
       <JoinQueueButton isInQueue={isInQueue} />
     </div>
