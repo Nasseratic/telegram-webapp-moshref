@@ -10,7 +10,7 @@ export const List = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="bg-white dark:bg-gray-800 p-2 pt-4  overflow-hidden shadow rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
+    <div className="bg-gray-100 dark:bg-gray-800 p-2 pt-4  overflow-hidden shadow-lg rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
       <div className="flex items-center justify-between mb-4">
         <h5 className="text-2xl font-bold leading-none text-gray-900 dark:text-white">
           الأدوار

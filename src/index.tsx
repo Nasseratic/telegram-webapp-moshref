@@ -43,12 +43,13 @@ const StudentView = () => {
 };
 
 const Root = () => {
-  const [, themeParams] = useThemeParams();
+  const [colorScheme, themeParams] = useThemeParams();
   const { data: session, isLoading } = useSession();
 
   useEffect(() => {
     if (themeParams.bg_color)
       document.body.style.backgroundColor = themeParams.bg_color;
+    if (colorScheme) document.body.classList.add(colorScheme);
   }, []);
 
   if (isLoading || !session) return null;

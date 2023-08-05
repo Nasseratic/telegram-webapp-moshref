@@ -1,5 +1,5 @@
 export const SESSION_ID =
-  (window as any)?.Telegram.WebApp?.initDataUnsafe?.start_param ?? 0;
+  (window as any)?.Telegram.WebApp?.initDataUnsafe?.start_param ?? 22;
 
 export const USERNAME =
   (window as any)?.Telegram.WebApp?.initDataUnsafe?.user?.username ??
