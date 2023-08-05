@@ -60,7 +60,7 @@ const App = () => {
   return (
     <ReactQueryProvider>
       <WebAppProvider options={{ smoothButtonsTransition: true }}>
-        <div className="p-8">
+        <div className="p-3">
           <Root />
         </div>
       </WebAppProvider>
