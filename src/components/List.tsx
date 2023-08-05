@@ -86,14 +86,14 @@ const StudentItem = ({
           <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
             <button
               type="button"
-              className="focus:outline-none text-white font-medium rounded-lg text-2xl p-2"
+              className="focus:outline-none text-white font-medium rounded-lg text-2xl px-2 py-0.5"
             >
               ✅
             </button>
 
             <button
               type="button"
-              className="focus:outline-none text-white font-medium rounded-lg text-2xl  p-2"
+              className="focus:outline-none text-white font-medium rounded-lg text-2xl px-2 py-0.5"
             >
               ❌
             </button>

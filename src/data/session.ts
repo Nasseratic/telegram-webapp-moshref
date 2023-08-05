@@ -16,8 +16,7 @@ export const useSession = () => {
 
     return {
       ...session,
-      // isTeacher: session?.teacherUsername === USERNAME,
-      isTeacher: true,
+      isTeacher: session?.teacherUsername === USERNAME,
     };
   });
   useEffect(() => {
