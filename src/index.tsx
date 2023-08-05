@@ -9,16 +9,12 @@ import { ReactQueryProvider } from "./utils/reactQuery";
 import { List } from "./components/List";
 import { USERNAME } from "./utils/config";
 import { useEffect } from "react";
-import { useSession } from "./data/session";
+import { useSession, useStudents } from "./data/session";
 import { ManageQueueButton } from "./components/ManageQueueButton";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-
-type StudentsList = NonNullable<
-  ReturnType<typeof useSession>["data"]
->["students"];
 
 const TeacherView = () => {
   return (
@@ -29,7 +25,11 @@ const TeacherView = () => {
   );
 };
 
-const StudentView = ({ students }: { students: StudentsList }) => {
+const StudentView = () => {
+  const { data: students, isLoading } = useStudents();
+
+  if (isLoading || !students) return null;
+
   const isInQueue = students.some(
     (sessionUser) => sessionUser.telegramUsername === USERNAME
   );
@@ -44,20 +44,16 @@ const StudentView = ({ students }: { students: StudentsList }) => {
 
 const Root = () => {
   const [, themeParams] = useThemeParams();
-  const { data: session, isLoading: isLoadingSessions } = useSession();
+  const { data: session, isLoading } = useSession();
 
   useEffect(() => {
     if (themeParams.bg_color)
       document.body.style.backgroundColor = themeParams.bg_color;
   }, []);
 
-  if (isLoadingSessions || !session) return null;
+  if (isLoading || !session) return null;
 
-  return session.isTeacher ? (
-    <TeacherView />
-  ) : (
-    <StudentView students={session.students} />
-  );
+  return session.isTeacher ? <TeacherView /> : <StudentView />;
 };
 
 const App = () => {

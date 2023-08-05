@@ -46,18 +46,21 @@ export interface Database {
         Row: {
           classId: number | null
           createdAt: string | null
+          currentSessionUserId: number | null
           id: number
           teacherUsername: string | null
         }
         Insert: {
           classId?: number | null
           createdAt?: string | null
+          currentSessionUserId?: number | null
           id?: number
           teacherUsername?: string | null
         }
         Update: {
           classId?: number | null
           createdAt?: string | null
+          currentSessionUserId?: number | null
           id?: number
           teacherUsername?: string | null
         }
@@ -66,6 +69,12 @@ export interface Database {
             foreignKeyName: "session_classId_fkey"
             columns: ["classId"]
             referencedRelation: "class"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "session_currentSessionUserId_fkey"
+            columns: ["currentSessionUserId"]
+            referencedRelation: "sessionUser"
             referencedColumns: ["id"]
           }
         ]
