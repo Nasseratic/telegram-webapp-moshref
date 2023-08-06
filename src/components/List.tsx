@@ -10,7 +10,7 @@ export const List = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="p-2 pt-4">
+    <div className="p-2 pt-4  divide-y divide-gray-200 dark:divide-gray-700">
       <div className="flex items-center justify-between mb-4">
         <h5 className="text-2xl font-bold leading-none text-gray-900 dark:text-white">
           الأدوار
