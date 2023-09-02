@@ -20,7 +20,7 @@ export const List = () => {
         {students?.length === 0 ? (
           <div className="flex items-center justify-between my-4">
             <h5 className="text-xl font-light leading-none text-gray-900 dark:text-white">
-              لا يوجد طلاب بعد 😔
+              لا يوجد طلاب بعد
             </h5>
           </div>
         ) : (
