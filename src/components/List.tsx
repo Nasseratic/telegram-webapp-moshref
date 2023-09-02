@@ -18,8 +18,8 @@ export const List = () => {
       </div>
       <div className="flow-root">
         {students?.length === 0 ? (
-          <div className="flex items-center justify-between mb-4">
-            <h5 className="text-xl font-light leading-none text-gray-900 dark:text-white pt-2">
+          <div className="flex items-center justify-between my-4">
+            <h5 className="text-xl font-light leading-none text-gray-900 dark:text-white">
               لا يوجد طلاب بعد 😔
             </h5>
           </div>
